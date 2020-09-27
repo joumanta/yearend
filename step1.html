@@ -13,6 +13,10 @@
                  var message = document.getElementById("message").value;
                  window.ReactNativeWebView.postMessage(message);
              });
+             
+             window.addEventListener("message", function(message) {
+                document.getElementById("text").innerHTML += `네이티브에서 받은 메시지 : {message.data}`;
+             });
          }
          
     </script>
@@ -20,6 +24,6 @@
 <body>
     <input type="text" id="message">
     <button id="button">메시지 전송</button>
-    
+    <p id="text"></p>
 </body>
 </html>
