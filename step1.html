@@ -14,7 +14,7 @@
            
             window.addEventListener("message", function(message)  {
                 setTimeout(function() {
-                    ReactNativeWebView.postMessage(message);
+                    window.ReactNativeWebView.postMessage(message);
                 },2000);
             });
         }
