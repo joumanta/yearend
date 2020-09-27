@@ -8,10 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script>
+        
+        
         window.onload = function() {
            
             window.addEventListener("message", function(message)  {
-                document.getElementById("text").innerHTML = `${message.data}단계`;
+                setTimeout(function() {
+                    ReactNativeWebView.postMessage(message);
+                },2000);
             });
         }
 
