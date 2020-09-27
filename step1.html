@@ -13,6 +13,7 @@
         window.onload = function() {
            
             window.addEventListener("message", function(message)  {
+                alert(message.data);
                 setTimeout(function() {
                     window.ReactNativeWebView.postMessage(message);
                 },2000);
