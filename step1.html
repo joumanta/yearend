@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="ko">
 <head>
@@ -6,24 +7,24 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-     <script>
-         window.onload = function() {
-             var button = document.getElementById("button");
-             button.addEventListener("click", function() {
-                 var message = document.getElementById("message").value;
-                 window.ReactNativeWebView.postMessage(message);
-             });
-             
-             window.addEventListener("message", message => {
-              document.getElementById("newStuff").innerHTML += `</br>${message.data}`;
+    <script>
+        window.onload = function() {
+            var button = document.getElementById("button");
+            button.addEventListener("click", function() {
+                var message = document.getElementById("message").value;
+                window.ReactNativeWebView.postMessage(message);
             });
-         }
-         
+
+            window.addEventListener("message", function(message)  {
+                document.getElementById("text").innerHTML = message.data;
+            });
+        }
+
     </script>
 </head>
 <body>
-    <input type="text" id="message">
-    <button id="button">메시지 전송</button>
-    <p id="newStuff"></p>
+<input type="text" id="message">
+<button id="button">메시지 전송</button>
+<p id="text"></p>
 </body>
 </html>
