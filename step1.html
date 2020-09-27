@@ -7,12 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
      <script>
-          function send(message) {
-            window.ReactNativeWebView.postMessage(message);
-          }
+         window.onload = function() {
+             var button = document.getElementByTagName("button");
+             button.addEventListener("click", function() {
+                 var message = document.getElementById("message").value;
+                 window.ReactNativeWebView.postMessage(message);
+             });
+         }
+         
     </script>
 </head>
 <body>
+    <input type="text" id="message">
     <button onclick="send('hello')">메시지 전송</button>
     
 </body>
