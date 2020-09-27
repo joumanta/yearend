@@ -8,7 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-   
-        window.ReactNativeWebView.postMessage('Hello');
+        <script>
+            function send(message) {
+                window.ReactNativeWebView.postMessage(message);
+            }
+        
+    </script>
+    <button onclick="send('hello')">네이티브로 메시지 보내기</button>
 </body>
 </html>
