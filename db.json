@@ -1,4 +1,6 @@
 {
-  "userId": "test",
-  "password": "1234"
+  "member": {
+    "userId": "test",
+    "password": "1234"
+  }
 }
